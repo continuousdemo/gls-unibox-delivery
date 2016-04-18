@@ -1,0 +1,16 @@
+php:
+  image: plab/docker-php:7.0-fpm
+  volumes:
+    - .:/app
+    - ./script/php.ini:/usr/local/etc/php/php.ini
+  command: 'php-fpm'
+
+app:
+  image: nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - .:/app
+    - ./script/nginx.conf:/etc/nginx/nginx.conf
+  links:
+    - php

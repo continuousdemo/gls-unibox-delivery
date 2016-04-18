@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="GLS API" default="default">
+    <property name="repo.dir" value="./" />
+    <resolvepath propertyName="repo.dir.resolved" file="${repo.dir}" />
+
+    <exec outputProperty="version.number" command="cat .version" dir="${repo.dir.resolved}" />
+
+    <!-- ============================================  -->
+    <!-- Target: RELEASE                               -->
+    <!-- ============================================  -->
+    <target name="inc-major">
+        <version releasetype="major" file=".version" property="version.number"/>
+        <echo msg="Version is ${version.number}" />
+    </target>
+
+    <target name="inc-minor">
+        <version releasetype="minor" file=".version" property="version.number"/>
+        <echo msg="Version is ${version.number}" />
+    </target>
+
+    <target name="inc-patch">
+        <version releasetype="bugfix" file=".version" property="version.number"/>
+        <echo msg="Version is ${version.number}" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: TAG Current version                   -->
+    <!-- ============================================  -->
+    <target name="tag" description="Create new tag and push to github">
+        <echo msg="Create new TAG with current version ${version.number}" />
+        <gittag repository="${repo.dir.resolved}" name="v${version.number}" message="Version ${version.number}" />
+        <gitpush repository="${repo.dir.resolved}" refspec="v${version.number}" quiet="true" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: CI                                    -->
+    <!-- ============================================  -->
+    <target name="ci" description="define data for .ci file">
+        <exec command="echo ${CI} > .ci" escape="false" passthru="true" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: DEFAULT                               -->
+    <!-- ============================================  -->
+    <target name="default">
+        <echo msg="Current version app is ${version.number}" />
+    </target>
+
+</project>

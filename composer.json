@@ -1,0 +1,23 @@
+{
+  "name": "GLS Unibox Delivery",
+  "type": "application",
+  "description": "Build parcel for GLS delivery system",
+  "license": "BSD-3-Clause",
+  "authors": [
+    { "name": "Pierre Tomasina" }
+  ],
+
+  "require": {
+    "atoum/atoum": "dev-master",
+    "atoum/stubs": "^2.1",
+    "psy/psysh": "^0.6.1",
+    "phing/phing": "^2.13"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Plab\\GlsUniboxDelivery\\Api\\": "src/Api",
+      "Plab\\GlsUniboxDelivery\\Gls\\": "src/Gls"
+    }
+  }
+}
