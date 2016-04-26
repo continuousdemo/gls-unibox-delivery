@@ -9,7 +9,7 @@ WHITE   := "\\033[0;02m"
 YELLOW  := "\\033[1;33m"
 CYAN    := "\\033[1;36m"
 
-CID = $(shell docker ps | grep 'glsunixboxdelivery_php_1' | awk '{print $$1}')
+CID = $(shell docker ps | grep 'glsuniboxdelivery_php_1' | awk '{print $$1}')
 USER = $(shell whoami)
 GROUP = $(shell groups $(whoami) | cut -d' ' -f1)
 
@@ -23,17 +23,17 @@ version:
 	@cat .version
 
 version-inc-major:
-	@docker exec glsunixboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-major'
+	@docker exec glsuniboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-major'
 
 version-inc-minor:
-	@docker exec glsunixboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-minor'
+	@docker exec glsuniboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-minor'
 
 version-inc-patch:
-	@docker exec glsunixboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-patch'
+	@docker exec glsuniboxdelivery_php_1 /bin/sh -c 'cd /app && ./vendor/bin/phing inc-patch'
 
 tu-debug:
 	php /app/vendor/bin/atoum -d /app/tests/units
 
 tu:
-	@docker exec glsunixboxdelivery_php_1 /bin/sh -c 'cd /app/ && php /app/vendor/bin/atoum -d /app/tests/units --use-light-report'
+	@docker exec glsuniboxdelivery_php_1 /bin/sh -c 'cd /app/ && php /app/vendor/bin/atoum -d /app/tests/units --use-light-report'
 
