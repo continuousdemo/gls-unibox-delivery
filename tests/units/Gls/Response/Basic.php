@@ -18,6 +18,27 @@ class Basic extends test
         
         $this
             ->if($this->newTestedInstance($raw))
+
+            ->string($this->testedInstance->T330)
+                ->isIdenticalTo('93190')
+
+            ->string($this->testedInstance->T863)
+                ->isIdenticalTo('1 avenue Aristide briand BAT 01')
+
+            ->string($this->testedInstance->T864)
+                ->isIdenticalTo('Livry gargan')
+
+            ->string($this->testedInstance->T860)
+                ->isIdenticalTo('yakout ougara')
+
+            ->string($this->testedInstance->T8915)
+                ->isIdenticalTo('2500000007')
+
+            ->string($this->testedInstance->T8700)
+                ->isIdenticalTo('FR0031')
+
+            ->string($this->testedInstance->T810)
+                ->isIdenticalTo('IT Company')
         ;
     }
 }

@@ -45,14 +45,16 @@ abstract class Response
         $parametersExtract = explode(self::DELIMITER, substr($this->raw, 13, -13));
 
         foreach ($parametersExtract as $parameterExtract) {
-            
-            list($key, $value) = explode(self::SEPARATOR, $parameterExtract, 2);
 
-            if (!property_exists($this, $key)) {
+            $keyValue = explode(self::SEPARATOR, $parameterExtract, 2);
+
+            if (empty($keyValue) || !property_exists($this, $keyValue[0])) {
                 continue;
             }
+
+            $key = $keyValue[0];
             
-            $this->$key = $value;
+            $this->$key = empty($keyValue[1]) ? '' : $keyValue[1];
         }
     }
 
