@@ -1,0 +1,60 @@
+<div class="cb1"></div>
+<div class="cb2"></div>
+<div class="cb3"></div>
+<div class="cb4"></div>
+<div class="l1"></div>
+<div class="l2"></div>
+<div class="l3"></div>
+<div class="l4"></div>
+<div class="l5"></div>
+<div class="l6"></div>
+<div class="l7"></div>
+
+<img src="<?php print($resPath) ?>/Logo_GLS.jpg" style="position:absolute;bottom: 0.5mm; right: 20mm; height: 7mm" alt=""/>
+
+<div class="qrtl"></div>
+<div class="qrtr"></div>
+<div class="qrbl"></div>
+<div class="qrbr"></div>
+
+<qrcode style="border:none;" class="t8902" ec="DATAMATRIX" rawValue="true" value="<?php print($this->response->T8902) ?>"></qrcode>
+<qrcode style="border:none;" class="t8903" ec="DATAMATRIX" rawValue="true" value="<?php print($this->response->T8903) ?>"></qrcode>
+
+<div class="t110 txt"><?php print($this->response->T110) ?></div>
+<div class="t310 txt"><?php print($this->response->T310) ?></div>
+<div class="t100 txt"><?php print($this->response->T100) ?></div>
+<div class="t101 txt"><?php print($this->response->T101) ?></div>
+<div class="t320 txt"><?php print($this->response->T320) ?></div>
+<div class="t8951 txt">ZipCode</div>
+<div class="t330 txt"><?php print($this->response->T330) ?></div>
+<div class="t8952 txt">Your GLS TrackID</div>
+<div class="t8913 txt"><?php print($this->response->T8913) ?></div>
+<div class="t8700 txt"><?php print($this->response->T8700) ?></div>
+<div class="t540 txt"><?php print($this->response->T540) ?></div>
+<div class="t541 txt"><?php print($this->response->T541) ?></div>
+<div class="t530 txt"><?php print($this->response->T530) ?> KG</div>
+
+<!-- t8904 / t8905 | quantième colis sur total colis expedition -->
+<div class="t8904 txt"><?php print($this->response->T8904) ?>/<?php print($this->response->T8905) ?></div>
+
+<!-- DESTINATAIRE -->
+
+<div class="t860 txt"><?php print($this->response->T860) ?></div>
+<div class="t861 txt"><?php print($this->response->T861) ?></div>
+<div class="t862 txt"><?php print($this->response->T862) ?></div>
+<div class="t863 txt"><?php print($this->response->T863) ?></div>
+<div class="t100-2 txt"><?php print($this->response->T100) ?></div>
+<div class="t330-2 txt"><?php print($this->response->T330) ?></div>
+<div class="t864 txt"><?php print($this->response->T864) ?></div>
+<div class="t859 txt">ref: <?php print($this->response->T859) ?></div>
+
+<!-- EXPEDITEUR -->
+
+<div class="t8915 txt-exp">Client<br /><?php print($this->response->T8915) ?></div> <!-- code client -->
+<div class="t8914 txt-exp">ContactId<br /><?php print($this->response->T8914) ?></div> <!-- contact id -->
+
+<div class="t810 txt-exp"><?php print($this->response->T810) ?></div>
+<div class="t820 txt-exp"><?php print($this->response->T820) ?></div>
+<div class="t821 txt-exp"><?php print($this->response->T821) ?></div>
+<div class="t822 txt-exp"><?php print($this->response->T822) ?></div>
+<div class="t823 txt-exp"><?php print($this->response->T823) ?></div>

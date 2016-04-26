@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "52b0b306b5589e51dc5275974138b29b",
-    "content-hash": "b5aae5a62b756f3831268a5b4bcb8204",
+    "hash": "50b32855bc055e9c934c4243f28ea4d5",
+    "content-hash": "d9d5f11c15f4e84c06fc3cac09240aff",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -256,16 +256,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v2.0.1",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "ce5be709d59b32dd8a88c80259028759991a4206"
+                "reference": "47b254ea51f1d6d5dc04b9b299e88346bf2369e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ce5be709d59b32dd8a88c80259028759991a4206",
-                "reference": "ce5be709d59b32dd8a88c80259028759991a4206",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/47b254ea51f1d6d5dc04b9b299e88346bf2369e3",
+                "reference": "47b254ea51f1d6d5dc04b9b299e88346bf2369e3",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -303,7 +303,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-02-28 19:48:28"
+            "time": "2016-04-19 13:41:41"
         },
         {
             "name": "phing/phing",
@@ -467,6 +467,61 @@
                 "shell"
             ],
             "time": "2015-11-12 16:18:56"
+        },
+        {
+            "name": "spipu/html2pdf",
+            "version": "dev-feature/qrcodeDataMatrix",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Power-LAB/html2pdf.git",
+                "reference": "0ff267bad23a2aeaff7538af83a5b79873c8705b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Power-LAB/html2pdf/zipball/0ff267bad23a2aeaff7538af83a5b79873c8705b",
+                "reference": "0ff267bad23a2aeaff7538af83a5b79873c8705b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "tecnickcom/tcpdf": "~6.2.0"
+            },
+            "require-dev": {
+                "phake/phake": "~2.0",
+                "phpunit/phpunit": ">=4.5.0",
+                "squizlabs/php_codesniffer": "~2"
+            },
+            "suggest": {
+                "ext-gd": "Allows to embed images into the PDF",
+                "fagundes/zff-html2pdf": "if you need to integrate Html2Pdf with Zend Framework 2 (zf2)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spipu\\Html2Pdf\\": "src/"
+                }
+            },
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Spipu",
+                    "homepage": "https://github.com/spipu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Html2Pdf is a HTML to PDF converter written in PHP5 (it uses TCPDF). OFFICIAL PACKAGE",
+            "homepage": "http://html2pdf.fr/",
+            "keywords": [
+                "html",
+                "html2pdf",
+                "pdf"
+            ],
+            "support": {
+                "source": "https://github.com/Power-LAB/html2pdf/tree/feature/qrcodeDataMatrix"
+            },
+            "time": "2016-04-18 09:04:54"
         },
         {
             "name": "symfony/console",
@@ -649,16 +704,82 @@
                 "dump"
             ],
             "time": "2016-03-10 10:34:12"
+        },
+        {
+            "name": "tecnickcom/tcpdf",
+            "version": "6.2.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/2f732eaa91b5665274689b1d40b285a7bacdc37f",
+                "reference": "2f732eaa91b5665274689b1d40b285a7bacdc37f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "fonts",
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "homepage": "http://nicolaasuni.tecnick.com"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "time": "2015-09-12 10:08:34"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "atoum/atoum": 20
+        "atoum/atoum": 20,
+        "spipu/html2pdf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0.0"
+    },
     "platform-dev": []
 }

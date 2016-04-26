@@ -7,17 +7,25 @@
     { "name": "Pierre Tomasina" }
   ],
 
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/Power-LAB/html2pdf.git"
+  }],
+
   "require": {
+    "php": ">=7.0.0",
     "atoum/atoum": "dev-master",
     "atoum/stubs": "^2.1",
     "psy/psysh": "^0.6.1",
-    "phing/phing": "^2.13"
+    "phing/phing": "^2.13",
+    "spipu/html2pdf": "dev-feature/qrcodeDataMatrix"
   },
 
   "autoload": {
     "psr-4": {
       "Plab\\GlsUniboxDelivery\\Api\\": "src/Api",
-      "Plab\\GlsUniboxDelivery\\Gls\\": "src/Gls"
+      "Plab\\GlsUniboxDelivery\\Gls\\": "src/Gls",
+      "Plab\\GlsUniboxDelivery\\Generator\\": "src/Generator"
     }
   }
 }
