@@ -17,11 +17,14 @@ class Basic extends Response
 {
     public $T863;
     public $T861;
+    public $T862;
     public $T330;
     public $T864;
     public $T860;
     public $T8906;
+    public $T1229;
     public $T1230;
+    public $T871;
     public $T859;
     public $T082;
     public $T090;

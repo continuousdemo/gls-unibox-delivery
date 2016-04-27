@@ -53,6 +53,16 @@ abstract class Response
             }
 
             $key = $keyValue[0];
+
+            if ('T8902' === $key) {
+                $this->T8902 = str_pad($keyValue[1], 123, ' ', STR_PAD_RIGHT);
+                continue;
+            }
+
+            if ('T8903' === $key) {
+                $this->T8903 = str_pad($keyValue[1], 106, ' ', STR_PAD_RIGHT);
+                continue;
+            }
             
             $this->$key = empty($keyValue[1]) ? '' : $keyValue[1];
         }

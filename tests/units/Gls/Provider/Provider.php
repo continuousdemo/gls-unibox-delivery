@@ -117,7 +117,7 @@ class Provider extends test
     {
         $Config = self::createConfig();
 
-        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '0000000004';
+        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '000004';
 
         $this
             ->if($this->newTestedInstance($Config))
@@ -126,6 +126,7 @@ class Provider extends test
             ->then($this->testedInstance->incrementPackage())
 
             ->string($this->testedInstance->getIncrementPackageNumber())
+                ->hasLength(10)
                 ->isIdenticalTo($packageNumber)
         ;
     }
@@ -144,7 +145,7 @@ class Provider extends test
         ;
 
         $basicRequest  = $this->createBasicRequest();
-        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '0000000001';
+        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '000001';
 
         $this
             ->if($this->newTestedInstance($Config))
@@ -153,7 +154,7 @@ class Provider extends test
             ->object($origin)
                 ->isInstanceOf(Parameter::class)
             ->string($origin->value)
-                ->hasLength(22)
+                ->hasLength(strlen('0221090000010000FR'))
                 ->isIdenticalTo('02' . $packageNumber . '0000' . 'FR')
         ;
     }

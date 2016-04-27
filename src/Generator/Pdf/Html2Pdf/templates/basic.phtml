@@ -17,8 +17,8 @@
 <div class="qrbl"></div>
 <div class="qrbr"></div>
 
-<qrcode style="border:none;" class="t8902" ec="DATAMATRIX" rawValue="true" value="<?php print($this->response->T8902) ?>"></qrcode>
-<qrcode style="border:none;" class="t8903" ec="DATAMATRIX" rawValue="true" value="<?php print($this->response->T8903) ?>"></qrcode>
+<qrcode style="border:none;" class="t8902" ec="DATAMATRIX" rawValue="true" value="<?php print($this->firstMatrix()) ?>"></qrcode>
+<qrcode style="border:none;" class="t8903" ec="DATAMATRIX" rawValue="true" value="<?php print($this->secondMatrix()) ?>"></qrcode>
 
 <div class="t110 txt"><?php print($this->response->T110) ?></div>
 <div class="t310 txt"><?php print($this->response->T310) ?></div>

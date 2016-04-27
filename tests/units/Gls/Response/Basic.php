@@ -39,6 +39,12 @@ class Basic extends test
 
             ->string($this->testedInstance->T810)
                 ->isIdenticalTo('IT Company')
+
+            ->string($this->testedInstance->T8902)
+                ->hasLength(123)
+
+            ->string($this->testedInstance->T8903)
+                ->hasLength(106)
         ;
     }
 }
