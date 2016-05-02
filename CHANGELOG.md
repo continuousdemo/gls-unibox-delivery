@@ -1,6 +1,13 @@
 GLS PARCEL BUILDER
 =========================
 
+May. 02, 2016 - v0.1.3
+--------------------------
+
+This release was fix for rebuild origin parameter
+
+ * Origin parameter must be unique and as used for package identification.
+   he must be set by user land.
 
 Apr. 27, 2016 - v0.1.2
 --------------------------
