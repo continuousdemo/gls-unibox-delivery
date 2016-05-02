@@ -51,6 +51,7 @@ class Parameter extends test
                 'T082',
                 'T090',
                 'PRODUCT_CODE',
+                'PACKAGE_NUMBER',
             ])
         ;
     }
@@ -781,6 +782,77 @@ class Parameter extends test
             ->if($this->newTestedInstance('T854', '09:39'))
             ->string($this->testedInstance->value)
                 ->isIdenticalTo('09:39')
+        ;
+    }
+
+    public function testCheckPACKAGE_NUMBER()
+    {
+        $this
+            ->variable($value = '102156')
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+                ->isTrue()
+            ->string($value)
+                ->isIdenticalTo('0000102156')
+        ;
+
+        $this
+            ->variable($param = $this->newTestedInstance('PACKAGE_NUMBER', '156'))
+            ->string($param->value)
+            ->isIdenticalTo('0000000156')
+        ;
+
+        $this
+            ->variable($param = $this->newTestedInstance('PACKAGE_NUMBER', '9887977720'))
+            ->string($param->value)
+            ->isIdenticalTo('9887977720')
+        ;
+
+        $this
+            ->exception(function() {
+                $this->newTestedInstance('PACKAGE_NUMBER', '19887977720');
+            })
+        ;
+
+        $this
+            ->exception(function() {
+                $this->newTestedInstance('PACKAGE_NUMBER', 'BarBaz');
+            })
+        ;
+
+        $this
+            ->variable($value = '1234567891')
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isTrue()
+        ;
+
+        $this
+            ->variable($value = '12345678910')
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isFalse()
+        ;
+
+        $this
+            ->variable($value = '14541f')
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isFalse()
+        ;
+
+        $this
+            ->variable($value = "123456\0\0\0\0")
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isFalse()
+        ;
+
+        $this
+            ->variable($value = "123456 789")
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isFalse()
+        ;
+
+        $this
+            ->variable($value = 'Foo')
+            ->boolean( \Plab\GlsUniboxDelivery\Gls\Parameter\Parameter::checkPACKAGE_NUMBER($value))
+            ->isFalse()
         ;
     }
 }

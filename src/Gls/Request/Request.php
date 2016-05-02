@@ -52,6 +52,20 @@ abstract class Request
     }
 
     /**
+     * @throws MandatoryException
+     */
+    public function checkMandatory()
+    {
+        $missingParams = array_diff(static::mandatoryParameters, $this->parameters->getMappingKeys());
+        
+        if ([] !== $missingParams) {
+            throw new MandatoryException('The following parameters are missing. ( ' . implode(',', $missingParams) . ' )');
+        }
+
+        return true;
+    }
+
+    /**
      * @param Parameter $parameter
      * @return Request
      */
@@ -125,6 +139,19 @@ abstract class Request
         return $this->createParameterInStack('T530', $value);
     }
 
+    /**
+     * @param $value
+     * @return Basic
+     */
+    public function setPackageNumber(string $value) :Request
+    {
+        return $this->createParameterInStack('PACKAGE_NUMBER', $value);
+    }
+
+    /**
+     * Return the shippping reference
+     * @return mixed
+     */
     public function getShippingReference()
     {
         $value = $this->getParameterValue('T8975');

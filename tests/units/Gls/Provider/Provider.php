@@ -17,7 +17,7 @@ use Plab\GlsUniboxDelivery\Gls\Request\Basic;
 class Provider extends test
 {
     /**
-     * @return object Basic
+     * @return Basic
      */
     private function createBasicRequest()
     {
@@ -32,7 +32,9 @@ class Provider extends test
             ->setRecipientName('yakout ougara')
             ->setRecipientComment('Rien a s')
             ->setRecipientMobile('0695303249')
+            ->setRecipientReference('65981')
             ->setWeight(1)
+            ->setPackageNumber('6598100001')
         ;
         
         return $request;
@@ -92,45 +94,6 @@ class Provider extends test
         }
     }
 
-    public function testIncrementPackage()
-    {
-        $Config = self::createConfig();
-
-        $this
-            ->if($this->newTestedInstance($Config))
-
-            ->integer($this->testedInstance->incrementPackage())
-                ->isIdenticalTo(1)
-
-            ->integer($this->testedInstance->incrementPackage())
-                ->isIdenticalTo(2)
-
-            ->integer($this->testedInstance->incrementPackage())
-                ->isIdenticalTo(3)
-
-            ->integer($this->testedInstance->incrementPackage())
-                ->isIdenticalTo(4)
-        ;
-    }
-
-    public function testGetIncrementPackageNumber()
-    {
-        $Config = self::createConfig();
-
-        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '000004';
-
-        $this
-            ->if($this->newTestedInstance($Config))
-            ->then($this->testedInstance->incrementPackage())
-            ->then($this->testedInstance->incrementPackage())
-            ->then($this->testedInstance->incrementPackage())
-
-            ->string($this->testedInstance->getIncrementPackageNumber())
-                ->hasLength(10)
-                ->isIdenticalTo($packageNumber)
-        ;
-    }
-
     public function testOrigin()
     {
         $Config = self::createConfig();
@@ -145,7 +108,7 @@ class Provider extends test
         ;
 
         $basicRequest  = $this->createBasicRequest();
-        $packageNumber = (string)((int)date('Y') + (int)date('m') + (int)date('d') + (int)date('H') + (int)date('i') + (int)date('s')) . '000001';
+        $packageNumber = $basicRequest->getParameterValue('PACKAGE_NUMBER');
 
         $this
             ->if($this->newTestedInstance($Config))

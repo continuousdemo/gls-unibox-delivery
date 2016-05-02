@@ -9,6 +9,7 @@
  */
 
 namespace Plab\GlsUniboxDelivery\Gls\Provider;
+use mageekguy\atoum\php\tokenizer\iterator\value;
 use Plab\GlsUniboxDelivery\Gls\Parameter\Parameter;
 use Plab\GlsUniboxDelivery\Gls\Request\Request;
 
@@ -32,11 +33,6 @@ class Provider
     protected $request;
 
     /**
-     * @var int
-     */
-    protected $incrementPackage;
-
-    /**
      * @var Parameter
      */
     protected $origin;
@@ -49,51 +45,11 @@ class Provider
     public function __construct(Config $config)
     {
         $this->config = $config;
-        $this->incrementPackage();
     }
 
     public function getMessage()
     {
         return $this->message;
-    }
-
-    /**
-     * @return int
-     */
-    public function incrementPackage() :int 
-    {
-        if (null === $this->incrementPackage) {
-            $this->incrementPackage = 0;
-        }
-
-        return $this->incrementPackage++;
-    }
-
-    /**
-     * Build unique numeric increment package based on date
-     * @note must be max 10 chars length and only numeric
-     */
-    public function getIncrementPackageNumber()
-    {
-        list($year, $month, $day, $hour, $minute, $second) 
-            = explode('.', (new \DateTimeImmutable())->format('Y.m.d.H.i.s'));
-        
-        $start = (string)(
-              (int)$year
-            + (int)$month
-            + (int)$day
-            + (int)$hour
-            + (int)$minute
-            + (int)$second
-        );
-
-        $padLen = 10 - strlen($start);
-        
-        return
-            $start
-            .
-            str_pad((string)$this->incrementPackage, $padLen, '0', STR_PAD_LEFT)
-        ;
     }
 
     /**
@@ -106,16 +62,16 @@ class Provider
         if (null === $this->request) {
             throw new ProviderException('You must have request object for obtain build parameter');
         }
-        
-        $parameterStack            = $this->request->getParametersStack();
-        $parameterProductCode      = $parameterStack->offsetGet('PRODUCT_CODE');
-        $parameterRecipientCountry = $parameterStack->offsetGet('T100');
+
+        $parameterProductCode      = $this->request->getParameterValue('PRODUCT_CODE');
+        $parameterRecipientCountry = $this->request->getParameterValue('T100');
+        $parameterPackageNumber    = $this->request->getParameterValue('PACKAGE_NUMBER');
 
         $origin =
-            $parameterProductCode->value->numeric
-            . $this->getIncrementPackageNumber()
+            $parameterProductCode->numeric
+            . $parameterPackageNumber
             . '0000'
-            . $parameterRecipientCountry->value
+            . $parameterRecipientCountry
         ;
 
         return $this->origin = new Parameter('T8975', $origin);
@@ -144,11 +100,6 @@ class Provider
         $this->request
             ->createParameterInStack('T082', Parameter::T082)
             ->createParameterInStack('T090', Parameter::T090)
-
-            ->createParameterInStack('T8973', '1')
-            ->createParameterInStack('T8904', '1')
-            ->createParameterInStack('T8702', '1')
-            ->createParameterInStack('T8905', '1')
             
             ->addToParametersStack($this->config->shippingDate)
             ->addToParametersStack($this->config->contactId)

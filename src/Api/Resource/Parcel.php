@@ -69,6 +69,7 @@ class Parcel extends Resource
                     ->setRecipientName($recipient->name)
                     ->setRecipientMobile($recipient->mobile)
                     ->setRecipientReference($recipient->reference)
+                    ->setPackageNumber($recipient->packageNumber)
                     ->setWeight($recipient->weight)
                 ;
             } catch (ParameterException $e) {

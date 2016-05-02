@@ -10,17 +10,34 @@
 namespace Plab\GlsUniboxDelivery\Gls\Request;
 
 
-use Plab\GlsUniboxDelivery\Gls\Parameter\Parameter;
 use Plab\GlsUniboxDelivery\Gls\Parameter\ProductCode;
 
 class Basic extends Request
 {
+    const mandatoryParameters = [
+        'T530',
+        'T860',
+        'T863',
+        'T330',
+        'T864',
+        'T100',
+        'T8973',
+        'T8904',
+        'T8702',
+        'T8905',
+        'PRODUCT_CODE',
+        'PACKAGE_NUMBER',
+    ];
+    
     public function __construct() 
     {
         parent::__construct();
+
+        $this->createParameterInStack('T8973', '1');
+        $this->createParameterInStack('T8904', '1');
+        $this->createParameterInStack('T8702', '1');
+        $this->createParameterInStack('T8905', '1');
         
-        $this->createParameterInStack('T082', Parameter::T082);
-        $this->createParameterInStack('T090', Parameter::T090);
         $this->createParameterInStack('PRODUCT_CODE', new ProductCode('BP'));
     }
     

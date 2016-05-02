@@ -48,6 +48,7 @@ class Parameter
     const T082 = 'UNIQUENO';
     const T090 = 'NOSAVE';
     const PRODUCT_CODE = 'Product code of GLS Service';
+    const PACKAGE_NUMBER = 'Package number for origin part';
 
     protected static $parameters;
     protected $key;
@@ -471,6 +472,21 @@ class Parameter
     public static function checkPRODUCT_CODE(ProductCode $value)
     {
         return true;
+    }
+
+    /**
+     * @param string $value
+     * @return bool
+     */
+    public static function checkPACKAGE_NUMBER(string & $value)
+    {
+        if (10 < strlen($value)) {
+            return false;
+        }
+
+        $value = str_pad($value, 10, '0', STR_PAD_LEFT);
+
+        return 1 === preg_match('/^[0-9]{10}$/', $value);
     }
 
     /**

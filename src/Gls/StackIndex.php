@@ -8,6 +8,8 @@
  */
 namespace Plab\GlsUniboxDelivery\Gls;
 
+use mageekguy\atoum\report\fields\runner\result;
+
 class StackIndex extends \SplDoublyLinkedList
 {
     protected $mapping = [];
@@ -51,5 +53,10 @@ class StackIndex extends \SplDoublyLinkedList
         $index = $this->findMapIndex($index);
 
         return parent::offsetUnset($index);
+    }
+    
+    public function getMappingKeys()
+    {
+        return array_keys($this->mapping);
     }
 }
