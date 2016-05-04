@@ -14,7 +14,7 @@
 
   "require": {
     "php": ">=7.0.0",
-    "atoum/atoum": "dev-master",
+    "atoum/atoum": "~2.6.0",
     "atoum/stubs": "^2.1",
     "psy/psysh": "^0.6.1",
     "phing/phing": "^2.13",

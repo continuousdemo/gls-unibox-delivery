@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50b32855bc055e9c934c4243f28ea4d5",
-    "content-hash": "d9d5f11c15f4e84c06fc3cac09240aff",
+    "hash": "5f5407dbb0c99bb48ab0b47d74e0ec5e",
+    "content-hash": "c914a976e6558677c471bf4abd8d221d",
     "packages": [
         {
             "name": "atoum/atoum",
-            "version": "dev-master",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atoum/atoum.git",
-                "reference": "7f821b01399c1b9ebaaf61d29c851738eea2e26b"
+                "reference": "10a0cde18ab73d4b66283c8b1b736574c14ecd0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atoum/atoum/zipball/7f821b01399c1b9ebaaf61d29c851738eea2e26b",
-                "reference": "7f821b01399c1b9ebaaf61d29c851738eea2e26b",
+                "url": "https://api.github.com/repos/atoum/atoum/zipball/10a0cde18ab73d4b66283c8b1b736574c14ecd0f",
+                "reference": "10a0cde18ab73d4b66283c8b1b736574c14ecd0f",
                 "shasum": ""
             },
             "require": {
@@ -525,16 +525,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd"
+                "reference": "34a214710e0714b6efcf40ba3cd1e31373a97820"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6b1175135bc2a74c08a28d89761272de8beed8cd",
-                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd",
+                "url": "https://api.github.com/repos/symfony/console/zipball/34a214710e0714b6efcf40ba3cd1e31373a97820",
+                "reference": "34a214710e0714b6efcf40ba3cd1e31373a97820",
                 "shasum": ""
             },
             "require": {
@@ -581,7 +581,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-16 17:00:50"
+            "time": "2016-04-28 09:48:42"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -644,16 +644,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "3841ed86527d18ee2c35fe4afb1b2fc60f8fae79"
+                "reference": "0e918c269093ba4c77fca14e9424fa74ed16f1a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3841ed86527d18ee2c35fe4afb1b2fc60f8fae79",
-                "reference": "3841ed86527d18ee2c35fe4afb1b2fc60f8fae79",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0e918c269093ba4c77fca14e9424fa74ed16f1a6",
+                "reference": "0e918c269093ba4c77fca14e9424fa74ed16f1a6",
                 "shasum": ""
             },
             "require": {
@@ -703,7 +703,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-03-10 10:34:12"
+            "time": "2016-04-25 11:17:47"
         },
         {
             "name": "tecnickcom/tcpdf",
@@ -773,7 +773,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "atoum/atoum": 20,
         "spipu/html2pdf": 20
     },
     "prefer-stable": false,
