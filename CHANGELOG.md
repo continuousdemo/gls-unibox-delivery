@@ -1,5 +1,17 @@
 GLS PARCEL BUILDER
-=========================
+==================
+
+May. 04, 2016 - v0.2.0
+--------------------------
+
+This release contain additional information on PDF Generator parcel
+
+ * Additional recipient information add on parcel bottom, as the contact name, 
+   mobile phone, extra reference.
+   
+ * Put the comment parameter just below the address2 parameter, and 
+   if the address2 is greater than 35 characters, the rest of string 
+   are put in front of comment.
 
 May. 02, 2016 - v0.1.3
 --------------------------
