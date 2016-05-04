@@ -106,6 +106,14 @@ class Parcel extends Resource
         $result = $pdf->render();
         
         $result->parcels += $parcelsError;
+
+        if (defined('__DEV_MODE__')) {
+            
+            $path = dirname(__DIR__, 2) . '/public';
+            
+            file_put_contents("$path/gls.json", json_encode($result->parcels));
+            file_put_contents("$path/gls.pdf", base64_decode($result->file));
+        }
         
         $this->result('json', $result);
     }

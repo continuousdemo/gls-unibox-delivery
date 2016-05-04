@@ -474,12 +474,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Power-LAB/html2pdf.git",
-                "reference": "0ff267bad23a2aeaff7538af83a5b79873c8705b"
+                "reference": "22178145923bb6260a57ac42e1096e8ab9a8bea9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Power-LAB/html2pdf/zipball/0ff267bad23a2aeaff7538af83a5b79873c8705b",
-                "reference": "0ff267bad23a2aeaff7538af83a5b79873c8705b",
+                "url": "https://api.github.com/repos/Power-LAB/html2pdf/zipball/22178145923bb6260a57ac42e1096e8ab9a8bea9",
+                "reference": "22178145923bb6260a57ac42e1096e8ab9a8bea9",
                 "shasum": ""
             },
             "require": {
@@ -521,7 +521,7 @@
             "support": {
                 "source": "https://github.com/Power-LAB/html2pdf/tree/feature/qrcodeDataMatrix"
             },
-            "time": "2016-04-18 09:04:54"
+            "time": "2016-04-27 10:03:05"
         },
         {
             "name": "symfony/console",
