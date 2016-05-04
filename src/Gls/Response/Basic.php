@@ -24,6 +24,7 @@ class Basic extends Response
     public $T8906;
     public $T1229;
     public $T1230;
+    public $T8908;
     public $T871;
     public $T859;
     public $T082;

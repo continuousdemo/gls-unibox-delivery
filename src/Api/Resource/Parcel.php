@@ -52,14 +52,14 @@ class Parcel extends Resource
             }
 
             if (35 < strlen($address2)) {
-                $address2 = substr($address2, 0, 35);
                 $comment = substr($address2, 35) . $comment;
+                $address2 = substr($address2, 0, 35);;
 
                 if (35 < strlen($comment)) {
                     $comment = substr($comment, 0, 35);
                 }
             }
-            
+
             try {
                 $request
                     ->setRecipientAddress1($recipient->address1)

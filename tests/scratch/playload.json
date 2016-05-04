@@ -9,18 +9,19 @@
     "name": "John Doe",
     "mobile": "0600000002",
     "weight": 0.2,
+    "comment": "Behind the warehouse D45",
     "reference": "00015"
   },
   {
     "packageNumber": "0000150001",
     "address1": "60 road avenue",
-    "address2": "BAT:F APP:13",
+    "address2": "BAT:F APP:13 behind the warehouse 13, and now it's more then 35 chars but reported in comment",
     "zipCode": "75015",
     "city": "Paris",
     "country": "FR",
     "name": "John Doe",
     "mobile": "0600000002",
-    "comment": "Behind the warehouse D45",
+    "comment": "",
     "weight": 0.2,
     "reference": "1032548"
   }
